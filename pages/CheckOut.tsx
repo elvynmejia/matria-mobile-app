@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Box,
   Input,
@@ -5,6 +6,8 @@ import {
   Button,
   ButtonGroup,
   ButtonText,
+  Text,
+  Center
 } from "@gluestack-ui/themed";
 
 export default function CheckOut({
@@ -19,12 +22,33 @@ export default function CheckOut({
     navigation,
   });
 
+  const [transaction, setTransaction] = useState({
+    amount: 0,
+    memo: "",
+    currency: "",
+  });
+
+  const handleInputChange = ({
+    name,
+    value,
+  }: {
+    name: string;
+    value: string;
+  }) => {
+    setTransaction((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
+
   return (
-    <Box 
-      mx={10}
-      my={50}
-      gap={50}
-    >
+    <Box mx={10} my={50} gap={50}>
+      {/* <Text>{JSON.stringify(transaction, null, 2)}</Text> */}
+      <Center>
+        <Text>{route?.params.user?.name}</Text>
+      </Center>
       <Input
         variant="underlined"
         size="sm"
@@ -35,9 +59,8 @@ export default function CheckOut({
         <InputField
           textAlign="center"
           keyboardType="numeric"
-          placeholder="$"
-          type="text"
-          onChangeText={() => {}}
+          placeholder="Cantidad"
+          onChangeText={(value) => handleInputChange({ name: "amount", value })}
         />
       </Input>
 
@@ -51,7 +74,9 @@ export default function CheckOut({
         <InputField
           placeholder="Typo de moneda?"
           type="text"
-          onChangeText={() => {}}
+          onChangeText={(value) =>
+            handleInputChange({ name: "currency", value })
+          }
         />
       </Input>
       <Input
@@ -61,13 +86,23 @@ export default function CheckOut({
         isInvalid={false}
         isReadOnly={false}
       >
-        <InputField placeholder="Para que es esto?" onChangeText={() => {}} />
+        <InputField
+          placeholder="Para que es esto?"
+          onChangeText={(value) => handleInputChange({ name: "memo", value })}
+        />
       </Input>
       <ButtonGroup justifyContent="space-around">
-        <Button size="xl">
+        <Button
+          size="xl"
+          onPress={() => console.log("================== Cobrar ============")}
+        >
           <ButtonText>Cobrar</ButtonText>
         </Button>
-        <Button size="xl">
+
+        <Button
+          size="xl"
+          onPress={() => console.log("=================== Pagar ============")}
+        >
           <ButtonText>Pagar</ButtonText>
         </Button>
       </ButtonGroup>
