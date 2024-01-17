@@ -1,12 +1,8 @@
-import { StatusBar } from "expo-status-bar";
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 import {
-  GluestackUIProvider,
   Text,
-  View,
   Input,
   InputField,
   FlatList,
@@ -16,13 +12,8 @@ import {
   Avatar,
   AvatarImage,
   VStack,
-  ScrollView,
   Pressable,
 } from "@gluestack-ui/themed";
-
-// import { NavigationAction } from "@react-navigation/native";
-
-import { config } from "@gluestack-ui/config"; // Optional if you want to use default theme
 
 export default function PayRequest({ navigation } : { navigation: any }) {
   const [users, setUsers] = useState([]);
@@ -160,12 +151,3 @@ export default function PayRequest({ navigation } : { navigation: any }) {
       </Box>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
