@@ -52,13 +52,13 @@ const Other = () => {
   );
 };
 
-const Home = () => {
+const Home = ({ navigation }: { navigation: any }) => {
 
   const data = [
     {
       id: "mi-salud",
-      name: "Mi Salid",
-      icon: "home"
+      name: "Mi Salud",
+      icon: "heart"
     },
     {
       id: "mi-dinero",
@@ -72,7 +72,7 @@ const Home = () => {
     },
     {
       id: "mis-logros",
-      name: "Mi Logros",
+      name: "Mis Logros",
       icon: "trophy"
     }
   ];
@@ -82,7 +82,7 @@ const Home = () => {
       <Heading size="xl" pl="$4">
         MATRIA
       </Heading>
-      <Heading size="md" pl="$4" pb="$3" sub>
+      <Heading size="xl" pl="$4" pb="$3" sub color="$coolGray600">
         CONMIGO
       </Heading>
       <FlatList
@@ -97,23 +97,12 @@ const Home = () => {
             ml={20}
           >
             <HStack space="md" justifyContent="flex-start" alignItems="center">
-              {/* <Avatar size="md">
-                <AvatarImage source={{ uri: item.avatarUrl }} />
-              </Avatar> */}
-              <MaterialCommunityIcons name={item.icon} />
+              <MaterialCommunityIcons name={item.icon} size={20}/>
               <VStack>
-                <Text color="$coolGray600" $dark-color="$warmGray200">
+                <Text color="$coolGray600" $dark-color="$warmGray200" size="xl">
                   {item.name}
                 </Text>
               </VStack>
-              <Text
-                fontSize="$xs"
-                color="$coolGray800"
-                alignSelf="flex-start"
-                $dark-color="$warmGray100"
-              >
-                {item.timeStamp}
-              </Text>
             </HStack>
           </Box>
         )}
