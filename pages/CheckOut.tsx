@@ -51,7 +51,7 @@ export default function CheckOut({
       </Center>
       <Input
         variant="underlined"
-        size="sm"
+        size="xl"
         isDisabled={false}
         isInvalid={false}
         isReadOnly={false}
@@ -66,7 +66,7 @@ export default function CheckOut({
 
       <Input
         variant="underlined"
-        size="sm"
+        size="xl"
         isDisabled={false}
         isInvalid={false}
         isReadOnly={false}
@@ -81,7 +81,7 @@ export default function CheckOut({
       </Input>
       <Input
         variant="outline"
-        size="lg"
+        size="xl"
         isDisabled={false}
         isInvalid={false}
         isReadOnly={false}
