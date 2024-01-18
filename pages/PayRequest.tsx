@@ -108,9 +108,6 @@ export default function PayRequest({ navigation } : { navigation: any }) {
           data={users}
           renderItem={({ item }: { item: any }) => (
             <Box
-              borderBottomWidth="$1"
-              borderColor="$trueGray800"
-              $dark-borderColor="$trueGray100"
               $base-pl={0}
               $base-pr={0}
               $sm-pl="$4"
