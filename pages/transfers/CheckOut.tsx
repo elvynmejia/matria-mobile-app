@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Box,
   Input,
@@ -43,6 +43,16 @@ export default function CheckOut({
     });
   };
 
+  const amountRef = useRef<typeof InputField>(null);
+
+  useEffect(() => {
+    // @ts-ignore
+    if (amountRef?.current) {
+      // @ts-ignore
+      amountRef?.current?.focus();
+    }
+  }, []);
+
   return (
     <Box mx={10} my={50} gap={50}>
       {/* <Text>{JSON.stringify(transaction, null, 2)}</Text> */}
@@ -57,6 +67,7 @@ export default function CheckOut({
         isReadOnly={false}
       >
         <InputField
+          ref={amountRef} // @ts-ignore
           textAlign="center"
           keyboardType="numeric"
           placeholder="$"
