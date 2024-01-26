@@ -16,16 +16,41 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-import PayRequest from "./pages/PayRequest";
-import CheckOut from "./pages/CheckOut";
+
+import CheckOut from "./pages/transfers/CheckOut";
 import Home from "./pages/Home";
+import CashApp from "./pages/transfers/CashApp";
+import Send from "./pages/transfers/Send";
+import Request from "./pages/transfers/Request";
 
 const PayRequestNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="CashApp"
+        component={CashApp}
+        // options={{
+        //   headerShown: false 
+        // }}
+      />
+
+      {/* <Stack.Screen
         name="PayRequest"
         component={PayRequest}
+        options={{
+          headerShown: false,
+        }}
+      /> */}
+      <Stack.Screen
+        name="Send"
+        component={Send}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Request"
+        component={Request}
         options={{
           headerShown: false,
         }}
@@ -33,7 +58,9 @@ const PayRequestNavigator = () => {
       <Stack.Screen
         name="Checkout"
         component={CheckOut}
-        // options={{ headerShown: false }}
+        options={{
+          headerShown: false 
+        }}
       />
     </Stack.Navigator>
   );
@@ -79,7 +106,7 @@ export default function App() {
             }}
           />
           <Tab.Screen
-            name="Pagar/Cobrar"
+            name="CashApp"
             component={PayRequestNavigator}
             options={{
               headerShown: false,

@@ -59,26 +59,16 @@ export default function CheckOut({
         <InputField
           textAlign="center"
           keyboardType="numeric"
-          placeholder="Cantidad"
+          placeholder="$"
           onChangeText={(value) => handleInputChange({ name: "amount", value })}
         />
       </Input>
 
-      <Input
-        variant="underlined"
-        size="xl"
-        isDisabled={false}
-        isInvalid={false}
-        isReadOnly={false}
-      >
-        <InputField
-          placeholder="Typo de moneda?"
-          type="text"
-          onChangeText={(value) =>
-            handleInputChange({ name: "currency", value })
-          }
-        />
-      </Input>
+      <Center>
+        <Text>
+          {route?.params?.account}
+        </Text>
+      </Center>
       <Input
         variant="outline"
         size="xl"
@@ -87,25 +77,16 @@ export default function CheckOut({
         isReadOnly={false}
       >
         <InputField
-          placeholder="Para que es esto?"
+          placeholder="Agrega una nota"
           onChangeText={(value) => handleInputChange({ name: "memo", value })}
         />
       </Input>
-      <ButtonGroup justifyContent="space-around">
-        <Button
-          size="xl"
-          onPress={() => console.log("================== Cobrar ============")}
-        >
-          <ButtonText>Cobrar</ButtonText>
-        </Button>
-
-        <Button
+      <Button
           size="xl"
           onPress={() => console.log("=================== Pagar ============")}
         >
-          <ButtonText>Pagar</ButtonText>
+          <ButtonText>{route?.params?.action}</ButtonText>
         </Button>
-      </ButtonGroup>
     </Box>
   );
 }
