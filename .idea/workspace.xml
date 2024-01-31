@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="76a8bc65-3a9e-41b8-b8d7-7c5f2c9f85f2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/transfers/CheckOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/transfers/CheckOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/transfers/Exchange.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/transfers/Exchange.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

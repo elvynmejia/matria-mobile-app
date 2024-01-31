@@ -22,6 +22,7 @@ import Home from "./pages/Home";
 import CashApp from "./pages/transfers/CashApp";
 import Send from "./pages/transfers/Send";
 import Request from "./pages/transfers/Request";
+import Exchange from "./pages/transfers/Exchange";
 
 const PayRequestNavigator = () => {
   return (
@@ -33,14 +34,6 @@ const PayRequestNavigator = () => {
         //   headerShown: false 
         // }}
       />
-
-      {/* <Stack.Screen
-        name="PayRequest"
-        component={PayRequest}
-        options={{
-          headerShown: false,
-        }}
-      /> */}
       <Stack.Screen
         name="Send"
         component={Send}
@@ -58,6 +51,13 @@ const PayRequestNavigator = () => {
       <Stack.Screen
         name="Checkout"
         component={CheckOut}
+        options={{
+          headerShown: false 
+        }}
+      />
+      <Stack.Screen
+        name="Exchange"
+        component={Exchange}
         options={{
           headerShown: false 
         }}
@@ -106,7 +106,7 @@ export default function App() {
             }}
           />
           <Tab.Screen
-            name="CashApp"
+            name="Mi Dinero"
             component={PayRequestNavigator}
             options={{
               headerShown: false,

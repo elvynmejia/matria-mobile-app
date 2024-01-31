@@ -7,7 +7,7 @@ import {
   ButtonGroup,
   ButtonText,
   Text,
-  Center
+  Center,
 } from "@gluestack-ui/themed";
 
 export default function CheckOut({
@@ -17,11 +17,6 @@ export default function CheckOut({
   route: any;
   navigation: any;
 }) {
-  console.log("CheckOut.", {
-    route,
-    navigation,
-  });
-
   const [transaction, setTransaction] = useState({
     amount: 0,
     memo: "",
@@ -76,9 +71,7 @@ export default function CheckOut({
       </Input>
 
       <Center>
-        <Text>
-          {route?.params?.account}
-        </Text>
+        <Text>{route?.params?.account}</Text>
       </Center>
       <Input
         variant="outline"
@@ -92,12 +85,9 @@ export default function CheckOut({
           onChangeText={(value) => handleInputChange({ name: "memo", value })}
         />
       </Input>
-      <Button
-          size="xl"
-          onPress={() => console.log("=================== Pagar ============")}
-        >
-          <ButtonText>{route?.params?.action}</ButtonText>
-        </Button>
+      <Button size="xl" onPress={() => navigation.navigate("CashApp")}>
+        <ButtonText>{route?.params?.action}</ButtonText>
+      </Button>
     </Box>
   );
 }
